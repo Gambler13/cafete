@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cafete Bern</title>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="43200">
+    <meta name="keywords" content="Cafete, Cafeteria, Programm, Reitschule, Bern, Nightlife, Bar, Disco">
+    <meta name="description" content="Offizielle Webseite der Cafete Bern">
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=0BxCDpnGzi26cZDMwZk1FUk1va0k" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;700;900&display=swap"
+          rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="bg" id="bg">
+    <div id="programm" class="programm">
+        <div class="banner">
+            <img class="image"   src="./static/cafete-white.png">
+            <div class="topbar">
+                <div><a class="nav" href="/contact.html">kontakt</a></div>
+                <div><a class="nav" href="https://de-de.facebook.com/die.cafete" target="_blank">facebook</a></div>
+                <div><a class="nav" href="https://www.instagram.com/cafete_reitschule/?hl=de" target="_blank">instagram</a></div>
+            </div>
+        </div>
+        {{if .InfoText }}
+        <div class="info">
+            <img class="infoImage" src="static/info.svg" width="25px">
+            <div class="infoText">{{ .InfoText }}</div></div>{{end}}
+        {{range .Events}}
+        <div class="event">
+            <div class="date">{{ .Date }}</div>
+            <div class="title">{{ .Title }}</div>
+            <div class="acts">{{ .Acts }}</div>
+            <div class="style">{{ .Style }}</div>
+            <div class="description">{{ .Description }}</div>
+            <div class="link"><a href="{{ .Link1.Url }}">{{ .Link1.Text }}</a></div>
+            <div class="link"><a href="{{ .Link2.Url }}">{{ .Link2.Text }}</a></div>
+            <div class="link"><a href="{{ .Link3.Url }}">{{ .Link3.Text }}</a></div>
+            <div class="link"><a href="{{ .Link4.Url }}">{{ .Link4.Text }}</a></div>
+            <div class="link"><a href="{{ .Link5.Url }}">{{ .Link5.Text }}</a></div>
+        </div>
+        <div class="divider"></div>
+        {{end}}
+    </div>
+    <div id="footer">
+        <p id="footer"><br/>2015 -
+            <script>
+                var d = new Date();
+                var n = d.getFullYear();
+                document.write(n);
+            </script>
+            by Cafete
+        </p>
+    </div>
+</div>
+</body>
+</html>
